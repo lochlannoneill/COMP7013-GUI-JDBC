@@ -68,6 +68,7 @@ public class PaneIntern extends Tab {
         Label labelMentor = new Label("Mentor:");
         ComboBox comboboxMentor = new ComboBox();
 		comboboxMentor.getItems().addAll(ControllerEngineer.getEngineerList());
+		comboboxMentor.setPromptText("Mentor");
 
 		// ---------------------------------------------------------------------------------
 		// ----------------------------------- Table
@@ -80,23 +81,21 @@ public class PaneIntern extends Tab {
 		columnName.setCellValueFactory(new PropertyValueFactory<Intern, Name>("name"));
 		TableColumn<Intern, String> columnId = new TableColumn<>("Id");
 		columnId.setCellValueFactory(new PropertyValueFactory<Intern, String>("id"));
-		TableColumn<Intern, LocalDate> columnStartDate = new TableColumn<>("StartDate");
-		columnStartDate.setCellValueFactory(new PropertyValueFactory<Intern, LocalDate>("startDate"));
-		TableColumn<Intern, Double> columnSalary = new TableColumn<>("Salary");
-		columnSalary.setCellValueFactory(new PropertyValueFactory<Intern, Double>("salary"));
-		TableColumn<Intern, String> columnEmail = new TableColumn<>("Email");
-		columnEmail.setCellValueFactory(new PropertyValueFactory<Intern, String>("Email"));
+        TableColumn<Intern, String> columnMentor = new TableColumn<>("Mentor");
+		columnMentor.setCellValueFactory(new PropertyValueFactory<Intern, String>("mentorId"));
         TableColumn<Intern, String> columnUniversity = new TableColumn<>("University");
 		columnUniversity.setCellValueFactory(new PropertyValueFactory<Intern, String>("university"));
-        TableColumn<Intern, String> columnMentor = new TableColumn<>("Mentor");
-		columnMentor.setCellValueFactory(new PropertyValueFactory<Intern, String>("mentor"));
+		TableColumn<Intern, Double> columnSalary = new TableColumn<>("Salary");
+		columnSalary.setCellValueFactory(new PropertyValueFactory<Intern, Double>("salary"));
+		TableColumn<Intern, LocalDate> columnStartDate = new TableColumn<>("StartDate");
+		columnStartDate.setCellValueFactory(new PropertyValueFactory<Intern, LocalDate>("startDate"));
 
 		TableView<Intern> table = new TableView<Intern>();
 		table.setMinWidth(TABLEWIDTH);
 		table.setMaxHeight(TABLEHEIGHT);
 		table.setMaxWidth(Region.USE_PREF_SIZE); // dynamic max width
 		table.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY); // sum of column widths equal table width
-		table.getColumns().addAll(columnName, columnId, columnEmail, columnSalary, columnStartDate);
+		table.getColumns().addAll(columnName, columnId, columnMentor, columnUniversity, columnSalary, columnStartDate);
 		table.setItems(observablelist);
 
 		// ---------------------------------------------------------------------------------
@@ -119,14 +118,14 @@ public class PaneIntern extends Tab {
 					actionResponse.setText("Salary required");
 				} else {
 
-					Intern.addIntern(
+					ControllerIntern.addIntern(
 						textfieldFirst.getText(),
 						textfieldMiddle.getText(),
 						textfieldLast.getText(),
 						datepickerStartDate.getValue(),
 						Double.parseDouble(textfieldSalary.getText()),
 						textfieldUniversity.getText(),
-                        comboboxMentor.getValue()
+                        comboboxMentor.getValue().toString() // ! this might be causing the issue of not being read to the observable list
 					);
 
 					// update gui table using updated database
@@ -144,6 +143,8 @@ public class PaneIntern extends Tab {
 					textfieldLast.clear();
 					datepickerStartDate.getEditor().clear();
 					textfieldSalary.clear();
+					textfieldUniversity.clear();
+					comboboxMentor.getSelectionModel().clearSelection(); // ! the prompt is also removed
 				}
 			}
 		}); // end buttonRemove.setOnAction()

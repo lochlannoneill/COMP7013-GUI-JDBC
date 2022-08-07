@@ -15,7 +15,7 @@ public class PaneIntro extends Tab {
 	
 	public PaneIntro() {
 		Label labelName = new Label("Student name:");
-        Text textName = new Text("Mattia");
+        Text textName = new Text("Lochlann O Neill");
         textName.setFont(Font.font ("Verdana"));
 		textName.setFill(Color.DARKGREY);
 
@@ -25,7 +25,7 @@ public class PaneIntro extends Tab {
 		textId.setFill(Color.DARKGREY);
 
 		Label labelAssignment = new Label("Assignment:");
-        Text textAssignment = new Text("Comp ---- –OOProj- Project");
+        Text textAssignment = new Text(" OOP - Java FX - Project Staff Directory");
 		textAssignment.setFont(Font.font ("Verdana"));
 		textAssignment.setFill(Color.DARKGREY);
 		

@@ -9,7 +9,6 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Random;
 
-import model.Engineer;
 import model.Intern;
 
 public class ControllerIntern {
@@ -17,7 +16,7 @@ public class ControllerIntern {
     private static final String TABLE = "table_interns";
     private static Connection connection = DatabaseConnection.getConnection(DATABASE);
 
-    public static void addIntern(String first, String middle, String last, LocalDate startDate, double salary, String university, Engineer mentor) {
+    public static void addIntern(String first, String middle, String last, LocalDate startDate, double salary, String university, String mentorId) {
         try {
 			Random rand = new Random();
 			String id = String.valueOf(
@@ -30,7 +29,7 @@ public class ControllerIntern {
             String query;
             Statement statement = connection.createStatement();
             query = "INSERT INTO `" + DATABASE + "`.`" + TABLE
-					+ "` (`id`, `first`, `middle`, `last`, `startDate`, `salary`, `university`, `mentor`) VALUES ('" 
+					+ "` (`id`, `first`, `middle`, `last`, `startDate`, `salary`, `university`, `mentorId`) VALUES ('" 
 					+ id + "','"
 					+ (first.substring(0, 1).toUpperCase() + first.substring(1)) + "','"
 					+ (middle.substring(0, 1).toUpperCase() + middle.substring(1)) + "','"
@@ -38,7 +37,7 @@ public class ControllerIntern {
 					+ startDate + "','"
 					+ salary + "','"
 					+ university + "','"
-					+ mentor + "')";
+					+ mentorId + "')";
 			statement.executeUpdate(query);
             
 			statement.close();
@@ -54,33 +53,32 @@ public class ControllerIntern {
     public static ArrayList<Intern> getInternList() {
 		ArrayList<Intern> internList = new ArrayList<Intern>();
 		try {
-			String query = "SELECT * FROM " + TABLE;
+			String query = "SELECT * FROM " + TABLE; // ! i think this is causing problem with current_mentor since it might be only selects plain text instead of object
 			PreparedStatement preparedstatement = connection.prepareStatement(query);
 			ResultSet resultset = preparedstatement.executeQuery();
 
 			while (resultset.next()) {
 				// create variables to be used as arguments for object creation
-				String current_id = resultset.getString("id");
-				String current_first = resultset.getString("first");
-				String current_middle = resultset.getString("middle");
-				String current_last = resultset.getString("last");
-				LocalDate current_startDate = resultset.getDate("startDate").toLocalDate();
-				double current_salary = resultset.getDouble("salary");
-				String current_university = resultset.getString("university");
-                Engineer current_mentor = (Engineer) resultset.getObject("mentor");
+				String currentId = resultset.getString("id");
+				String currentFirst = resultset.getString("first");
+				String currentMiddle = resultset.getString("middle");
+				String currentLast = resultset.getString("last");
+				LocalDate currentStartDate = resultset.getDate("startDate").toLocalDate();
+				double currentSalary = resultset.getDouble("salary");
+				String currentUniversity = resultset.getString("university");
+                String currentMentorId = resultset.getString("mentorId");
 
 				// create a new player object for each database query result
 				Intern currentIntern = new Intern(
-					current_id,
-					current_first,
-					current_middle,
-					current_last,
-					current_startDate,
-					current_salary,
-					current_university,
-					current_mentor
+					currentId,
+					currentFirst,
+					currentMiddle,
+					currentLast,
+					currentStartDate,
+					currentSalary,
+					currentUniversity,
+					currentMentorId
 				);
-				
 				internList.add(currentIntern);
 				
 			}

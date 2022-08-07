@@ -5,6 +5,7 @@ import javafx.scene.*;
 import javafx.scene.layout.*;
 import javafx.scene.text.Text;
 import javafx.scene.control.*;
+import javafx.scene.image.Image;
 import javafx.geometry.*;
 
 public class AlertAgree {
@@ -12,9 +13,10 @@ public class AlertAgree {
 	static int STAGEWIDTH = 450;
 	static int STAGEHEIGHT = 150;
 
-	public static boolean display(String title, String message) {
+	public static boolean display(String favicon, String title, String message) {
 		Stage window = new Stage();
 		window.initModality(Modality.APPLICATION_MODAL); // Block events to other windows
+		window.getIcons().add(new Image(favicon));
 		window.setTitle(title);
 		window.setMinWidth(STAGEWIDTH);
 		window.setMinHeight(STAGEHEIGHT);
