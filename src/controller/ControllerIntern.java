@@ -17,7 +17,7 @@ public class ControllerIntern {
     private static final String TABLE = "table_interns";
     private static Connection connection = DatabaseConnection.getConnection(DATABASE);
 
-    public static void addIntern(String first, String middle, String last, LocalDate startDate, double salary) {
+    public static void addIntern(String first, String middle, String last, LocalDate startDate, double salary, Engineer mentor) {
         try {
 			Random rand = new Random();
 			String id = String.valueOf(
@@ -37,7 +37,7 @@ public class ControllerIntern {
 					+ (last.substring(0, 1).toUpperCase() + last.substring(1)) + "','"
 					+ startDate + "','"
 					+ salary + "','"
-					+ (id+"@staff.fx") + "')";
+					+ mentor + "')";
 			statement.executeUpdate(query);
             
 			statement.close();
@@ -66,7 +66,7 @@ public class ControllerIntern {
 				LocalDate current_startDate = resultset.getDate("startDate").toLocalDate();
 				double current_salary = resultset.getDouble("salary");
 				String current_university = resultset.getString("university");
-                Engineer current_mentor = resultset.getObject("mentor");
+                Engineer current_mentor = (Engineer) resultset.getObject("mentor");
 
 				// create a new player object for each database query result
 				Intern currentIntern = new Intern(
