@@ -162,7 +162,7 @@ public class PaneAdmin extends Tab {
 
 				if (selectedTableItem == null) {
 					actionResponse.setFill(Color.RED);
-					actionResponse.setText("You must select a record from the table to delete");
+					actionResponse.setText("You must select a record from the table to remove");
 				} else {
 					// remove entity from database using the controller
 					ControllerAdmin.removeAdmin(selectedAdmin); // use phone as unique primary key
