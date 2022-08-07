@@ -38,7 +38,9 @@ public class PaneIntern extends Tab {
 	@SuppressWarnings("unchecked")
 	public PaneIntern() {
 
-		// ----------------------------------------------------- Labels and input
+		// ---------------------------------------------------------------------------------
+		// -------------------------------- Labels and Input
+		// ---------------------------------------------------------------------------------
 		Label labelFirstName = new Label("First Name:");
 		TextField textfieldFirst = new TextField();
 		textfieldFirst.setPromptText("First Name");
@@ -69,7 +71,9 @@ public class PaneIntern extends Tab {
 		comboboxMentor.getItems().addAll(ControllerEngineer.getEngineerList());
 		comboboxMentor.setPromptText("Engineer");
 
-		// ----------------------------------------------------- Table
+		// ---------------------------------------------------------------------------------
+		// -------------------------------- Table
+		// ---------------------------------------------------------------------------------
 		ObservableList<Intern> observablelist = FXCollections.observableArrayList(ControllerIntern.getInternList());
 
 		// --NOTE--setCellValueFactory() uses the 'set' methods for the given class
