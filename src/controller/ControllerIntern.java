@@ -17,7 +17,7 @@ public class ControllerIntern {
     private static final String TABLE = "table_interns";
     private static Connection connection = DatabaseConnection.getConnection(DATABASE);
 
-    public static void addIntern(String first, String middle, String last, LocalDate startDate, double salary, Engineer mentor) {
+    public static void addIntern(String first, String middle, String last, LocalDate startDate, double salary, String university, String mentor) {
         try {
 			Random rand = new Random();
 			String id = String.valueOf(
@@ -30,13 +30,14 @@ public class ControllerIntern {
             String query;
             Statement statement = connection.createStatement();
             query = "INSERT INTO `" + DATABASE + "`.`" + TABLE
-					+ "` (`id`, `first`, `middle`, `last`, `startDate`, `salary`, `email`) VALUES ('" 
+					+ "` (`id`, `first`, `middle`, `last`, `startDate`, `salary`, `university`, `mentor`) VALUES ('" 
 					+ id + "','"
 					+ (first.substring(0, 1).toUpperCase() + first.substring(1)) + "','"
 					+ (middle.substring(0, 1).toUpperCase() + middle.substring(1)) + "','"
 					+ (last.substring(0, 1).toUpperCase() + last.substring(1)) + "','"
 					+ startDate + "','"
 					+ salary + "','"
+					+ university + "','"
 					+ mentor + "')";
 			statement.executeUpdate(query);
             
