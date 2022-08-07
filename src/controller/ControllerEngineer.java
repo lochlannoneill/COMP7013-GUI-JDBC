@@ -45,7 +45,6 @@ public class ControllerEngineer {
         } catch
             (SQLException SQLException) {
                 SQLException.printStackTrace();
-                // close();
             }
     }
 
@@ -66,7 +65,7 @@ public class ControllerEngineer {
 				double current_salary = resultset.getDouble("salary");
 				String current_email = resultset.getString("email");
 
-				// create a new player object for each database query result
+				// create a new object for each database query result
 				Engineer currentEngineer = new Engineer(
 					current_id, current_first, current_middle, current_last, current_startDate, current_salary, current_email
 				);

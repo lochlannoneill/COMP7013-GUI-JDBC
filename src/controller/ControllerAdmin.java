@@ -45,7 +45,6 @@ public class ControllerAdmin {
         } catch
             (SQLException SQLException) {
                 SQLException.printStackTrace();
-                // close();
             }
     }
 
@@ -66,7 +65,7 @@ public class ControllerAdmin {
 				double current_salary = resultset.getDouble("salary");
 				int current_phone = resultset.getInt("phone");
 
-				// create a new player object for each database query result
+				// create a new object for each database query result
 				Admin currentAdmin = new Admin(
 					current_id, current_first, current_middle, current_last, current_startDate, current_salary, current_phone
 				);
@@ -78,7 +77,7 @@ public class ControllerAdmin {
 			ex.printStackTrace();
 		}
 		return adminList;
-	} // end getPlayers()
+	}
 
     public static void removeAdmin(Admin admin) {
         try {
@@ -90,7 +89,6 @@ public class ControllerAdmin {
 		} 
         catch (SQLException sqlException) {
 			sqlException.printStackTrace();
-			// close();
 		}
     }
 
@@ -105,7 +103,6 @@ public class ControllerAdmin {
 		} 
         catch (SQLException sqlException) {
 			sqlException.printStackTrace();
-			// close();
 		}
 	}
 

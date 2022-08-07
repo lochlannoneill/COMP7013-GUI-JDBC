@@ -9,6 +9,7 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
+import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
@@ -214,6 +215,7 @@ public class PaneEngineer extends Tab {
 		hboxButtonsActivities.getChildren().addAll(buttonAdd, buttonRemove, buttonRaise);
 		hboxButtonsActivities.setSpacing(16);
 		hboxButtonsActivities.setPadding(new Insets(16, 0, 16, 0));
+		hboxButtonsActivities.setAlignment(Pos.CENTER);
 
 		setText("Engineers");
 		VBox vboxLayout = new VBox(gridpaneInput, hboxButtonsActivities, table, actionResponse);

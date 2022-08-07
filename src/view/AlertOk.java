@@ -8,7 +8,7 @@ import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.geometry.*;
 
-public class AlertAgree {
+public class AlertOk {
 	static boolean response;
 	static int STAGEWIDTH = 450;
 	static int STAGEHEIGHT = 150;
@@ -24,18 +24,12 @@ public class AlertAgree {
 		Text prompt = new Text();
 		prompt.setText(message);
 		
-		Button buttonAccept = new Button("Yes");
-		buttonAccept.setOnAction(e -> {
-			response = true;
-			window.close();
-		});
-		Button buttonDecline = new Button("No");
-		buttonDecline.setOnAction(e -> {
-			response = false;
+		Button buttonOk = new Button("Yes");
+		buttonOk.setOnAction(e -> {
 			window.close();
 		});
 		
-		HBox hboxButtons = new HBox(buttonAccept, buttonDecline);
+		HBox hboxButtons = new HBox(buttonOk);
 		hboxButtons.setSpacing(16);
 		hboxButtons.setPadding(new Insets(0, 0, 8, 8));
 		hboxButtons.setAlignment(Pos.CENTER);

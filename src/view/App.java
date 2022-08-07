@@ -25,15 +25,25 @@ public class App extends Application {
 			// ---------------------------------------------------------------------------------
 			// -------------------------------- Application Operations
 			// ---------------------------------------------------------------------------------
-			Button buttonExit = new Button("Quit");
-			buttonExit.setMinWidth(64);
-			buttonExit.setOnAction(e -> {
+			Button buttonQuit = new Button("Quit");
+			buttonQuit.setMinWidth(64);
+			buttonQuit.setOnAction(e -> {
 				boolean response = AlertAgree.display(FAVICON, ASSIGNMENT, "Are you sure you want to quit?");
 				if (response == true) {
 					primaryStage.close();
 				}
 			});
-			HBox hboxApplicationOperations = new HBox(buttonExit);
+
+			Button buttonAuthor = new Button("Author");
+			buttonAuthor.setMinWidth(64);
+			buttonAuthor.setOnAction(e -> {
+				boolean response = AlertOk.display(FAVICON, ASSIGNMENT, "This amazing application was written by Lochlann O Neill. He can be found here: https://linktr.ee/lochlannoneill");
+				if (response == true) {
+					primaryStage.close();
+				}
+			});
+
+			HBox hboxApplicationOperations = new HBox(buttonQuit, buttonAuthor);
 			hboxApplicationOperations.setSpacing(16);
 			hboxApplicationOperations.setPadding(new Insets(0, 0, 8, 8));
 
@@ -50,6 +60,7 @@ public class App extends Application {
 
 			BorderPane currentPane = new BorderPane();
 			Scene scene = new Scene(currentPane, SCENEWIDTH, SCENEHEIGHT);
+			scene.getStylesheets().add(getClass().getResource("App.css").toExternalForm());
 
 			currentPane.setBottom(hboxApplicationOperations);
 			currentPane.setCenter(tabs);

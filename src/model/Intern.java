@@ -22,12 +22,12 @@ public class Intern extends Staff {
         this.university = newUniversity;
     }
 
-    public String getMentor() {
+    public String getMentorId() {
         return this.mentorId;
     }
 
-    public void setMentor(String newMentor) {
-        this.mentorId = newMentor;
+    public void setMentorId(String newMentorId) {
+        this.mentorId = newMentorId;
     }
 
     public String getTitle() {
@@ -38,7 +38,4 @@ public class Intern extends Staff {
         this.setSalary(Math.round((this.getSalary() * 1.02) * 100) / 100.0);
     }
 
-    // public static void addIntern(String text, String text2, String text3, LocalDate value, double parseDouble,
-    //         String text4, String id) {
-    // }
 }

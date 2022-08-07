@@ -46,7 +46,6 @@ public class ControllerIntern {
         } catch
             (SQLException SQLException) {
                 SQLException.printStackTrace();
-                // close();
             }
     }
 
@@ -68,7 +67,7 @@ public class ControllerIntern {
 				String currentUniversity = resultset.getString("university");
                 String currentMentorId = resultset.getString("mentorId");
 
-				// create a new player object for each database query result
+				// create a new object for each database query result
 				Intern currentIntern = new Intern(
 					currentId,
 					currentFirst,
@@ -86,7 +85,7 @@ public class ControllerIntern {
 			ex.printStackTrace();
 		}
 		return internList;
-	} // end getPlayers()
+	}
 
     public static void removeIntern(Intern intern) {
         try {
@@ -98,7 +97,6 @@ public class ControllerIntern {
 		} 
         catch (SQLException sqlException) {
 			sqlException.printStackTrace();
-			// close();
 		}
     }
 
@@ -113,7 +111,6 @@ public class ControllerIntern {
 		} 
         catch (SQLException sqlException) {
 			sqlException.printStackTrace();
-			// close();
 		}
 	}
 

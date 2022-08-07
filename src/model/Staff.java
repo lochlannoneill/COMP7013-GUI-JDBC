@@ -1,7 +1,6 @@
 package model;
 
 import java.io.Serializable;
-// import java.util.Random;
 import java.time.LocalDate;
 
 public class Staff implements Serializable {
@@ -9,10 +8,8 @@ public class Staff implements Serializable {
     private Name name;
     private LocalDate startDate;
     private double salary;
-    // private Random rand = new Random();
 
     public Staff(String i, String f, String m, String l, LocalDate d, double s) {
-        // this.id = String.valueOf(f.charAt(0)).toLowerCase() + String.valueOf(m.charAt(0)).toLowerCase() + l.toLowerCase() + String.valueOf(this.rand.nextInt(99));
         this.id = i;
         this.name = new Name(f, m, l);
         this.startDate = d;

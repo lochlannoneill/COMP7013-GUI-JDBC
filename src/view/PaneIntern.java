@@ -9,6 +9,7 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
+import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
@@ -37,9 +38,7 @@ public class PaneIntern extends Tab {
 	@SuppressWarnings("unchecked")
 	public PaneIntern() {
 
-		// ---------------------------------------------------------------------------------
-		// ------------------------- Labels and input
-		// ---------------------------------------------------------------------------------
+		// ----------------------------------------------------- Labels and input
 		Label labelFirstName = new Label("First Name:");
 		TextField textfieldFirst = new TextField();
 		textfieldFirst.setPromptText("First Name");
@@ -70,10 +69,7 @@ public class PaneIntern extends Tab {
 		comboboxMentor.getItems().addAll(ControllerEngineer.getEngineerList());
 		comboboxMentor.setPromptText("Engineer");
 
-		// ---------------------------------------------------------------------------------
-		// ----------------------------------- Table
-		// ---------------------------------------------------------------------------------
-		// data obtained to put into gui table
+		// ----------------------------------------------------- Table
 		ObservableList<Intern> observablelist = FXCollections.observableArrayList(ControllerIntern.getInternList());
 
 		// --NOTE--setCellValueFactory() uses the 'set' methods for the given class
@@ -226,6 +222,7 @@ public class PaneIntern extends Tab {
 		hboxButtonsActivities.getChildren().addAll(buttonAdd, buttonRemove, buttonRaise);
 		hboxButtonsActivities.setSpacing(16);
 		hboxButtonsActivities.setPadding(new Insets(16, 0, 16, 0));
+		hboxButtonsActivities.setAlignment(Pos.CENTER);
 
 		setText("Interns");
 		VBox vboxLayout = new VBox(gridpaneInput, hboxButtonsActivities, table, actionResponse);
