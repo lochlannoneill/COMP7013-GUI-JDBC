@@ -2,7 +2,6 @@ package controller;
 
 import java.sql.*;
 
-// TODO - need to properly setup connection to database (using jar files????)
 public class DatabaseConnection {
     static final String USERNAME = "root";
     static final String PASSWORD = "root";

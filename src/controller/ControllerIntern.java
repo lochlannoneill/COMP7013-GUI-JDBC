@@ -9,6 +9,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Random;
 
+import model.Engineer;
 import model.Intern;
 
 public class ControllerIntern {
@@ -65,7 +66,7 @@ public class ControllerIntern {
 				LocalDate current_startDate = resultset.getDate("startDate").toLocalDate();
 				double current_salary = resultset.getDouble("salary");
 				String current_university = resultset.getString("university");
-                String current_mentor = resultset.getString("mentor");
+                Engineer current_mentor = resultset.getObject("mentor");
 
 				// create a new player object for each database query result
 				Intern currentIntern = new Intern(

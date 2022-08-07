@@ -50,7 +50,6 @@ public class PaneAdmin extends Tab {
 		TextField textfieldLast = new TextField();
 		textfieldLast.setPromptText("Last Name");
 
-		// TODO - how to do a date picker properly instead
 		Label labelStartDate = new Label("Start Date");
 		DatePicker datepickerStartDate = new DatePicker();
 		datepickerStartDate.setPromptText("Start Date");

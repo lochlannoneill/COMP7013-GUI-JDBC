@@ -11,7 +11,6 @@ import java.util.Random;
 
 import model.Engineer;
 
-// TODO - need to fix the primary key for record deletion. try to do ID properly in these functions
 public class ControllerEngineer {
 	private static final String DATABASE = "staff_database";
     private static final String TABLE = "table_engineers";
