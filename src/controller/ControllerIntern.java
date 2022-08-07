@@ -17,7 +17,7 @@ public class ControllerIntern {
     private static final String TABLE = "table_interns";
     private static Connection connection = DatabaseConnection.getConnection(DATABASE);
 
-    public static void addIntern(String first, String middle, String last, LocalDate startDate, double salary, String university, String mentor) {
+    public static void addIntern(String first, String middle, String last, LocalDate startDate, double salary, String university, Engineer mentor) {
         try {
 			Random rand = new Random();
 			String id = String.valueOf(

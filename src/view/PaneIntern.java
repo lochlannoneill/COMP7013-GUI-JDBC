@@ -126,7 +126,7 @@ public class PaneIntern extends Tab {
 						datepickerStartDate.getValue(),
 						Double.parseDouble(textfieldSalary.getText()),
 						textfieldUniversity.getText(),
-                        comboboxMentor.getId()
+                        comboboxMentor.getValue()
 					);
 
 					// update gui table using updated database
