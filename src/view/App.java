@@ -43,7 +43,7 @@ public class App extends Application {
 			TabPane tabs = new TabPane();
 			tabs.setTabMinWidth(80);
 			tabs.setTabClosingPolicy(TabClosingPolicy.UNAVAILABLE);
-			tabs.getTabs().add(new PaneIntro());
+			tabs.getTabs().add(new PaneHome());
 			tabs.getTabs().add(new PaneAdmin());
 			tabs.getTabs().add(new PaneEngineer());
 			tabs.getTabs().add(new PaneIntern());

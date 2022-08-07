@@ -68,7 +68,7 @@ public class PaneIntern extends Tab {
         Label labelMentor = new Label("Mentor:");
         ComboBox comboboxMentor = new ComboBox();
 		comboboxMentor.getItems().addAll(ControllerEngineer.getEngineerList());
-		comboboxMentor.setPromptText("Mentor");
+		comboboxMentor.setPromptText("Engineer");
 
 		// ---------------------------------------------------------------------------------
 		// ----------------------------------- Table
