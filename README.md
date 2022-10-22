@@ -7,7 +7,7 @@
 ### Background:
 * IDE: ***[VSCode](https://code.visualstudio.com/)***  
 * Language: ***[JavaFX](https://openjfx.io/)***  
-* Database: ***[MySQL Workbench Community Edition]([https://openjfx.io/](https://dev.mysql.com/downloads/workbench/))***  
+* Database: ***[MySQL Workbench Community Edition](https://openjfx.io/](https://dev.mysql.com/downloads/workbench/))***  
 * Database Connector: ***[JDBC](https://dev.mysql.com/downloads/connector/j/8.0.html)***  
 
 ### About:
