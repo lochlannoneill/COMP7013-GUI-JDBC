@@ -2,7 +2,7 @@
 
 # COMP7013 - OOP - GUI
 ### Collaborators:
-* **[Lochlann O Neill](https://github.com/lochlannoneill)** `Group Leader`  
+* **[Lochlann O Neill](https://github.com/lochlannoneill)**
 
 ### Background:
 * IDE: ***[VSCode](https://code.visualstudio.com/)***  
