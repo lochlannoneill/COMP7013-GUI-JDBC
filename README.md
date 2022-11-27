@@ -11,12 +11,14 @@
 * Database Connector: ***[JDBC](https://dev.mysql.com/downloads/connector/j/8.0.html)***  
 
 ### About:
-A staff directory GUI to interact with an SQL database containing multiple different kinds of employees. {Admin, Engineer, Intern} which inherit from the Staff class.
+A staff directory GUI to interact with an SQL database containing multiple different kinds of employees. {Admin, Engineer, Intern} which inherit from the Staff class.  
 
-![home](https://github.com/lochlannoneill/COMP7013-OOP-GUI/blob/main/screenshots/home.png?raw=true)
+Records may be added/deleted/updated from their respective databases through the observable list element selection in each tab using.  
 
-![admins](https://github.com/lochlannoneill/COMP7013-OOP-GUI/blob/main/screenshots/admins.png?raw=true)
+![home](https://github.com/lochlannoneill/COMP7013-OOP-GUI/blob/main/screenshots/home.png?raw=true)  
 
-![engineers](https://github.com/lochlannoneill/COMP7013-OOP-GUI/blob/main/screenshots/engineers.png?raw=true)
+![admins](https://github.com/lochlannoneill/COMP7013-OOP-GUI/blob/main/screenshots/admins.png?raw=true)  
 
-![interns](https://github.com/lochlannoneill/COMP7013-OOP-GUI/blob/main/screenshots/interns.png?raw=true)
+![engineers](https://github.com/lochlannoneill/COMP7013-OOP-GUI/blob/main/screenshots/engineers.png?raw=true)  
+
+![interns](https://github.com/lochlannoneill/COMP7013-OOP-GUI/blob/main/screenshots/interns.png?raw=true)  
