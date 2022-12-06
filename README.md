@@ -1,6 +1,6 @@
 <!--https://github.com/darsaveli/Readme-Markdown-Syntax-->
 
-# COMP7013 - JavaFX - JDBC
+# COMP7013 - OOP - JavaFX - JDBC
 ### Collaborators:
 * **[Lochlann O Neill](https://github.com/lochlannoneill)**
 
