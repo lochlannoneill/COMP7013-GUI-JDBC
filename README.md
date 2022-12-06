@@ -1,6 +1,6 @@
 <!--https://github.com/darsaveli/Readme-Markdown-Syntax-->
 
-# COMP7013 - OOP - GUI
+# COMP7013 - GUI - JDBC
 ### Collaborators:
 * **[Lochlann O Neill](https://github.com/lochlannoneill)**
 
