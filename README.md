@@ -10,7 +10,7 @@
 * Database: ***[MySQL Workbench Community Edition](https://openjfx.io/](https://dev.mysql.com/downloads/workbench/))***  
 * Database Connector: ***[JDBC](https://dev.mysql.com/downloads/connector/j/8.0.html)***  
 
-### About:
+<!--### About:  -->
 <!--A staff directory GUI to interact with an SQL database containing multiple different kinds of employees. {Admin, Engineer, Intern} which inherit from the Staff class.  -->
 
 <!--Records may be added/deleted/updated from their respective databases through the observable list element selection in each tab using.  -->
